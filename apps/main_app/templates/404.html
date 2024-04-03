@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html dir="ltr" lang="zxx">
 
@@ -15,13 +16,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Allura&amp;display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/plugins/swiper.min.css" type="text/css">
-  <link rel="stylesheet" href="css/plugins/jquery.fancybox.css" type="text/css">
-  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/plugins/swiper.min.css' %} " type="text/css">
+  <link rel="stylesheet" href="{% static 'css/plugins/jquery.fancybox.css' %} " type="text/css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %} " type="text/css">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--[if lt IE 9]>
-    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js' %}"></script>
   <![endif]-->
 
   <!-- Document Title -->
@@ -189,7 +190,7 @@
 
       <div class="logo">
         <a href="index.html">
-          <img src="../images/logo.png" alt="Uomo" class="logo__image d-block">
+          <img src="{% static 'images/logo.png' %}" alt="Uomo" class="logo__image d-block">
         </a>
       </div><!-- /.logo -->
 
@@ -416,7 +417,7 @@
       <div class="header-desk header-desk_type_1">
         <div class="logo">
           <a href="index.html">
-            <img src="../images/logo.png" alt="Uomo" class="logo__image d-block">
+            <img src="{% static 'images/logo.png' %}" alt="Uomo" class="logo__image d-block">
           </a>
         </div><!-- /.logo -->
 
@@ -526,7 +527,7 @@
 
                   <div class="mega-menu__media col">
                     <div class="position-relative">
-                      <img loading="lazy" class="mega-menu__img" src="../images/mega-menu-item.jpg" alt="New Horizons">
+                      <img loading="lazy" class="mega-menu__img" src="{% static 'images/mega-menu-item.jpg' %}" alt="New Horizons">
                       <div class="mega-menu__media-content content_abs content_left content_bottom">
                         <h3>NEW</h3>
                         <h3 class="mb-0">HORIZONS</h3>
@@ -731,7 +732,7 @@
       <div class="cart-drawer-item d-flex position-relative">
         <div class="position-relative">
           <a href="product1_simple.html">
-            <img loading="lazy" class="cart-drawer-item__img" src="../images/cart-item-1.jpg" alt="">
+            <img loading="lazy" class="cart-drawer-item__img" src="{% static 'images/cart-item-1.jpg' %}" alt="">
           </a>
         </div>
         <div class="cart-drawer-item__info flex-grow-1">
@@ -756,7 +757,7 @@
       <div class="cart-drawer-item d-flex position-relative">
         <div class="position-relative">
           <a href="product1_simple.html">
-            <img loading="lazy" class="cart-drawer-item__img" src="../images/cart-item-2.jpg" alt="">
+            <img loading="lazy" class="cart-drawer-item__img" src="{% static 'images/cart-item-2.jpg' %}" alt="">
           </a>
         </div>
         <div class="cart-drawer-item__info flex-grow-1">
@@ -781,7 +782,7 @@
       <div class="cart-drawer-item d-flex position-relative">
         <div class="position-relative">
           <a href="product1_simple.html">
-            <img loading="lazy" class="cart-drawer-item__img" src="../images/cart-item-3.jpg" alt="">
+            <img loading="lazy" class="cart-drawer-item__img" src="{% static 'images/cart-item-3.jpg' %}" alt="">
           </a>
         </div>
         <div class="cart-drawer-item__info flex-grow-1">
@@ -819,7 +820,7 @@
     <div class="modal-dialog modal-fullscreen">
       <div class="sitemap d-flex">
         <div class="w-50 d-none d-lg-block">
-          <img loading="lazy" src="../images/nav-bg.jpg" alt="Site map" class="sitemap__bg">
+          <img loading="lazy" src="{% static 'images/nav-bg.jpg' %}" alt="Site map" class="sitemap__bg">
         </div><!-- /.sitemap__bg w-50 d-none d-lg-block -->
         <div class="sitemap__links w-50 flex-grow-1">
           <div class="modal-content">
@@ -1084,16 +1085,16 @@
                 }'>
                 <div class="swiper-wrapper">
                   <div class="swiper-slide product-single__image-item">
-                    <img loading="lazy" src="../images/products/quickview_1.jpg" alt="">
+                    <img loading="lazy" src="{% static 'images/products/quickview_1.jpg' %}" alt="">
                   </div>
                   <div class="swiper-slide product-single__image-item">
-                    <img loading="lazy" src="../images/products/quickview_2.jpg" alt="">
+                    <img loading="lazy" src="{% static 'images/products/quickview_2.jpg' %}" alt="">
                   </div>
                   <div class="swiper-slide product-single__image-item">
-                    <img loading="lazy" src="../images/products/quickview_3.jpg" alt="">
+                    <img loading="lazy" src="{% static 'images/products/quickview_3.jpg' %}" alt="">
                   </div>
                   <div class="swiper-slide product-single__image-item">
-                    <img loading="lazy" src="../images/products/quickview_4.jpg" alt="">
+                    <img loading="lazy" src="{% static 'images/products/quickview_4.jpg' %}" alt="">
                   </div>
                 </div>
                 <div class="swiper-button-prev"><svg width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_prev_sm" /></svg></div>
@@ -1170,8 +1171,8 @@
                   </div>
                 </details>
               </share-button>
-              <script src="js/details-disclosure.js" defer="defer"></script>
-              <script src="js/share.js" defer="defer"></script>
+              <script src="{% static 'js/details-disclosure.js' %}" defer="defer"></script>
+              <script src="{% static 'js/share.js' %}" defer="defer"></script>
             </div>
             <div class="product-single__meta-info mb-0">
               <div class="meta-item">
@@ -1200,16 +1201,16 @@
   <div class="page-overlay"></div><!-- /.page-overlay -->
 
   <!-- External JavaScripts -->
-  <script src="js/plugins/jquery.min.js"></script>
-  <script src="js/plugins/bootstrap.bundle.min.js"></script>
-  <script src="js/plugins/bootstrap-slider.min.js"></script>
+  <script src="{% static 'js/plugins/jquery.min.js' %}"></script>
+  <script src="{% static 'js/plugins/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/plugins/bootstrap-slider.min.js' %}"></script>
   
-  <script src="js/plugins/swiper.min.js"></script>
-  <script src="js/plugins/countdown.js"></script>
-  <script src="js/plugins/jquery.fancybox.js"></script>
+  <script src="{% static 'js/plugins/swiper.min.js' %}"></script>
+  <script src="{% static 'js/plugins/countdown.js' %}"></script>
+  <script src="{% static 'js/plugins/jquery.fancybox.js' %}"></script>
 
   <!-- Footer Scripts -->
-  <script src="js/theme.js"></script>
+  <script src="{% static 'js/theme.js' %}"></script>
 
 </body>
 

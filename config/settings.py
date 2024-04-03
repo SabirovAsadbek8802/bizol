@@ -26,6 +26,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.store_app.apps.StoreAppConfig',
+    'apps.blogs_app.apps.BlogsAppConfig',
+    'apps.payments_app.apps.PaymentsAppConfig',
+    'apps.users_app.apps.UsersAppConfig',
+    'apps.main_app.apps.MainAppConfig',
 ]
 
 MIDDLEWARE = [
@@ -43,9 +47,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR / 'templates'
-            ],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
