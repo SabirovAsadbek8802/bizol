@@ -10,7 +10,7 @@ from django.core.exceptions import ValidationError
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
-    icon = models.ImageField(upload_to='uploads/products/icons/')
+    icon = models.ImageField(upload_to='uploads/icons/')
     children = models.ForeignKey('self', on_delete = models.DO_NOTHING, null=True, blank=True)
     
     class Meta:

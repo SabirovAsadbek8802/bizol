@@ -30,8 +30,8 @@
             <div class="slideshow-text container position-absolute start-50 top-50 text-center translate-middle">
               <h2 class="h1 fw-normal color-white mb-4 animate animate_fade animate_btt animate_delay-5">Better Things In a<br>Better Way</h2>
               <div class="d-flex align-items-center justify-content-center gap-4">
-                <a href="shop1.html" class="btn-link btn-link_lg color-white fw-medium animate animate_fade animate_btt animate_delay-7">Shop Women</a>
-                <a href="shop1.html" class="btn-link btn-link_lg color-white fw-medium animate animate_fade animate_btt animate_delay-7">Shop Men</a>
+                <a href="shop1.html" class="btn-link btn-link_lg color-white fw-medium animate animate_fade animate_btt animate_delay-7">Interior Upgrades</a>
+                <a href="shop1.html" class="btn-link btn-link_lg color-white fw-medium animate animate_fade animate_btt animate_delay-7">Fluid Maintenance</a>
               </div>
             </div>
           </div>
@@ -42,9 +42,9 @@
               <img loading="lazy" src="{% static '/images/home/demo5/bizol4.jpg'%}" width="1903" height="945" alt="" class="slideshow-bg__img object-fit-cover object-position-right" style="object-position: 70% center;">
             </div>
             <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3 text-white">SUMMER 2023</h6>
-              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5 text-white">New Arrival Women’s</h2>
-              <h2 class="h1 fw-bold mb-2 animate animate_fade animate_btt animate_delay-5 text-white">Collection</h2>
+              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3 text-white">SUMMER 2024</h6>
+              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5 text-white">New Arrival For Trucks'</h2>
+              <h2 class="h1 fw-bold mb-2 animate animate_fade animate_btt animate_delay-5 text-white">With Bonus</h2>
               <a href="shop1.html" class="btn-link btn-link_lg default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7 text-white">Discover More</a>
             </div>
           </div>
@@ -94,7 +94,7 @@
     <div class="mb-4 mb-xl-5 pt-1 pb-5"></div>
 
     <section class="category-carousel container">
-      <h2 class="section-title text-center fw-normal mb-3 pb-xl-2 mb-xl-4">Top Categories</h2>
+      <h2 class="section-title text-center fw-normal mb-3 pb-xl-2 mb-xl-4">Categories</h2>
 
       <div class="position-relative">
         <div class="swiper-container js-swiper-slider"
@@ -132,54 +132,14 @@
             }
           }'>
           <div class="swiper-wrapper">
+            {% for category in categories%}
             <div class="swiper-slide">
-              <img loading="lazy" class="w-100 mb-3 h-auto" src="{% static '/images/home/demo5/category_1.png' %}" width="124" height="124" alt="">
+              <a href="{% url 'shop' %}"><img loading="lazy" class="w-100 mb-3 h-auto" src="{{ category.icon.url }}" width="124" height="124" alt=""></a>
               <div class="text-center">
-                <a href="shop1.html" class="menu-link fw-medium">Handbags</a>
+                <a href="{% url 'shop' %}" class="menu-link fw-medium">{{category.name}}</a>
               </div>
             </div>
-            <div class="swiper-slide">
-              <img loading="lazy" class="w-100 mb-3 h-auto" src="{% static '/images/home/demo5/category_2.png' %}" width="124" height="124" alt="">
-              <div class="text-center">
-                <a href="shop1.html" class="menu-link fw-medium">Clothings</a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" class="w-100 mb-3 h-auto" src="{% static '/images/home/demo5/category_3.png' %}" width="124" height="124" alt="">
-              <div class="text-center">
-                <a href="shop1.html" class="menu-link fw-medium">Jackets</a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" class="w-100 mb-3 h-auto" src="{% static '/images/home/demo5/category_4.png' %}" width="124" height="124" alt="">
-              <div class="text-center">
-                <a href="shop1.html" class="menu-link fw-medium">Watches</a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" class="w-100 mb-3 h-auto" src="{% static '/images/home/demo5/category_5.png' %}" width="124" height="124" alt="">
-              <div class="text-center">
-                <a href="#" class="menu-link fw-medium">Dresses</a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" class="w-100 mb-3 h-auto" src="{% static '/images/home/demo5/category_6.png' %}" width="124" height="124" alt="">
-              <div class="text-center">
-                <a href="shop1.html" class="menu-link fw-medium">Shoes</a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" class="w-100 mb-3 h-auto" src="{% static '/images/home/demo5/category_7.png' %}" width="124" height="124" alt="">
-              <div class="text-center">
-                <a href="shop1.html" class="menu-link fw-medium">Jeans</a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" class="w-100 mb-3 h-auto" src="{% static '/images/home/demo5/category_8.png' %}" width="124" height="124" alt="">
-              <div class="text-center">
-                <a href="shop1.html" class="menu-link fw-medium">Shirts</a>
-              </div>
-            </div>
+            {% endfor %}
           </div><!-- /.swiper-wrapper -->
         </div><!-- /.swiper-container js-swiper-slider -->
       </div><!-- /.position-relative -->
@@ -191,23 +151,20 @@
       <div class="mb-4 mb-xl-5 pt-1 pb-5"></div>
 
       <section class="products-carousel container">
-        <h2 class="section-title fw-normal text-center mb-3 pb-xl-3 mb-xl-3">Our Top Collection</h2>
+        <h2 class="section-title fw-normal text-center mb-3 pb-xl-3 mb-xl-3">Our Products</h2>
 
         <ul class="nav nav-tabs mb-3 mb-xl-5 justify-content-center" id="collections-tab" role="tablist">
           <li class="nav-item" role="presentation">
             <a class="nav-link nav-link_underscore active" id="collections-tab-1-trigger" data-bs-toggle="tab" href="#collections-tab-1" role="tab" aria-controls="collections-tab-1" aria-selected="true">All</a>
           </li>
           <li class="nav-item" role="presentation">
-            <a class="nav-link nav-link_underscore" id="collections-tab-2-trigger" data-bs-toggle="tab" href="#collections-tab-2" role="tab" aria-controls="collections-tab-2" aria-selected="true">Featured</a>
+            <a class="nav-link nav-link_underscore" id="collections-tab-2-trigger" data-bs-toggle="tab" href="#collections-tab-2" role="tab" aria-controls="collections-tab-2" aria-selected="true">For Vehicles</a>
           </li>
           <li class="nav-item" role="presentation">
-            <a class="nav-link nav-link_underscore" id="collections-tab-3-trigger" data-bs-toggle="tab" href="#collections-tab-3" role="tab" aria-controls="collections-tab-3" aria-selected="true">Polpular</a>
+            <a class="nav-link nav-link_underscore" id="collections-tab-3-trigger" data-bs-toggle="tab" href="#collections-tab-3" role="tab" aria-controls="collections-tab-3" aria-selected="true">For Trucks</a>
           </li>
           <li class="nav-item" role="presentation">
             <a class="nav-link nav-link_underscore" id="collections-tab-4-trigger" data-bs-toggle="tab" href="#collections-tab-4" role="tab" aria-controls="collections-tab-4" aria-selected="true">Sale</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link nav-link_underscore" id="collections-tab-5-trigger" data-bs-toggle="tab" href="#collections-tab-5" role="tab" aria-controls="collections-tab-5" aria-selected="true">Best Rated</a>
           </li>
         </ul>
 
