@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
   <main>
@@ -12,7 +13,7 @@
           <div class="col-lg-6 d-flex flex-column">
             <a href="#" class="lookbook-collection__item position-relative flex-grow-1 mb-4 effect border-plus">
               <div class="lookbook-collection__item-image">
-                <img loading="lazy" src="../images/lookbook/lookbook-1.jpg" width="690" height="399" alt="">
+                <img loading="lazy" src="{% static '/images/lookbook/lookbook-1.jpg' %}" width="690" height="399" alt="">
               </div>
               <div class="content_abs content_bottom content_left content_bottom-md content_left-md">
                 <p class="text-uppercase mb-1 white-color">STARTING AT $19</p>
@@ -21,7 +22,7 @@
             </a>
             <a href="#" class="lookbook-collection__item position-relative flex-grow-1 mt-1 mb-4 effect border-plus">
               <div class="lookbook-collection__item-image">
-                <img loading="lazy" src="../images/lookbook/lookbook-2.jpg" width="690" height="399" alt="">
+                <img loading="lazy" src="{% static '/images/lookbook/lookbook-2.jpg' %}" width="690" height="399" alt="">
               </div>
               <div class="content_abs content_bottom content_left content_bottom-md content_left-md">
                 <p class="text-uppercase mb-1">STARTING AT $21</p>
@@ -32,7 +33,7 @@
           <div class="col-lg-6">
             <a href="#" class="lookbook-collection__item size-lg position-relative mb-4 effect border-plus">
               <div class="lookbook-collection__item-image">
-                <img loading="lazy" src="../images/lookbook/lookbook-3.jpg" width="690" height="826" alt="">
+                <img loading="lazy" src="{% static '/images/lookbook/lookbook-3.jpg' %}" width="690" height="826" alt="">
               </div>
               <div class="content_abs content_bottom content_left content_bottom-md content_left-md">
                 <p class="text-uppercase mb-1">STARTİNG AT $39</p>
@@ -43,7 +44,7 @@
           <div class="col-lg-6">
             <a href="#" class="lookbook-collection__item size-lg position-relative mt-1 mb-4 effect border-plus">
               <div class="lookbook-collection__item-image">
-                <img loading="lazy" src="../images/lookbook/lookbook-4.jpg" width="690" height="826" alt="">
+                <img loading="lazy" src="{% static '/images/lookbook/lookbook-4.jpg' %}" width="690" height="826" alt="">
               </div>
               <div class="content_abs content_bottom content_left content_bottom-md content_left-md">
                 <p class="text-uppercase mb-1">STARTİNG AT $39</p>
@@ -54,7 +55,7 @@
           <div class="col-lg-6 d-flex flex-column">
             <a href="#" class="lookbook-collection__item position-relative flex-grow-1 mt-1 mb-4 effect border-plus">
               <div class="lookbook-collection__item-image">
-                <img loading="lazy" src="../images/lookbook/lookbook-5.jpg" width="690" height="399" alt="">
+                <img loading="lazy" src="{% static '/images/lookbook/lookbook-5.jpg' %}" width="690" height="399" alt="">
               </div>
               <div class="content_abs content_bottom content_left content_bottom-md content_left-md">
                 <p class="text-uppercase mb-1">STARTING AT $19</p>
@@ -63,7 +64,7 @@
             </a>
             <a href="#" class="lookbook-collection__item position-relative flex-grow-1 mt-1 mb-4 effect border-plus">
               <div class="lookbook-collection__item-image">
-                <img loading="lazy" src="../images/lookbook/lookbook-6.jpg" width="690" height="399" alt="">
+                <img loading="lazy" src="{% static '/images/lookbook/lookbook-6.jpg' %}" width="690" height="399" alt="">
               </div>
               <div class="content_abs content_bottom content_left content_bottom-md content_left-md">
                 <p class="text-uppercase mb-1">STARTING AT $21</p>

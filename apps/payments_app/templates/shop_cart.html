@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
   <main>
@@ -46,7 +47,7 @@
                 <td>
                   <div class="shopping-cart__product-item">
                     <a href="product1_simple.html">
-                      <img loading="lazy" src="../images/cart-item-1.jpg" width="120" height="120" alt="">
+                      <img loading="lazy" src="{% static '/images/cart-item-1.jpg' %}" width="120" height="120" alt="">
                     </a>
                   </div>
                 </td>
@@ -85,7 +86,7 @@
                 <td>
                   <div class="shopping-cart__product-item">
                     <a href="product1_simple.html">
-                      <img loading="lazy" src="../images/cart-item-2.jpg" width="120" height="120" alt="">
+                      <img loading="lazy" src="{% static '/images/cart-item-2.jpg' %}" width="120" height="120" alt="">
                     </a>
                   </div>
                 </td>
@@ -124,7 +125,7 @@
                 <td>
                   <div class="shopping-cart__product-item">
                     <a href="product1_simple.html">
-                      <img loading="lazy" src="../images/cart-item-3.jpg" width="120" height="120" alt="">
+                      <img loading="lazy" src="{% static '/images/cart-item-3.jpg' %}" width="120" height="120" alt="">
                     </a>
                   </div>
                 </td>

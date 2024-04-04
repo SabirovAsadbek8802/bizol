@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 {% block content %}
   <main>
@@ -12,26 +12,26 @@
               <div class="swiper-container">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide product-single__image-item">
-                    <img loading="lazy" class="h-auto" src="../images/products/product_0.jpg" width="674" height="674" alt="">
-                    <a data-fancybox="gallery" href="../images/products/product_0.jpg" data-bs-toggle="tooltip" data-bs-placement="left" title="Zoom">
+                    <img loading="lazy" class="h-auto" src="../images/products/product_0.jpg' %}" width="674" height="674" alt="">
+                    <a data-fancybox="gallery" href="{% static '/images/products/product_0.jpg' %}" data-bs-toggle="tooltip" data-bs-placement="left" title="Zoom">
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_zoom" /></svg>
                     </a>
                   </div>
                   <div class="swiper-slide product-single__image-item">
-                    <img loading="lazy" class="h-auto" src="../images/products/product_0-1.jpg" width="674" height="674" alt="">
-                    <a data-fancybox="gallery" href="../images/products/product_0-1.jpg" data-bs-toggle="tooltip" data-bs-placement="left" title="Zoom">
+                    <img loading="lazy" class="h-auto" src="../images/products/product_0-1.jpg' %}" width="674" height="674" alt="">
+                    <a data-fancybox="gallery" href="{% static '/images/products/product_0-1.jpg' %}" data-bs-toggle="tooltip" data-bs-placement="left" title="Zoom">
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_zoom" /></svg>
                     </a>
                   </div>
                   <div class="swiper-slide product-single__image-item">
-                    <img loading="lazy" class="h-auto" src="../images/products/product_0-2.jpg" width="674" height="674" alt="">
-                    <a data-fancybox="gallery" href="../images/products/product_0-2.jpg" data-bs-toggle="tooltip" data-bs-placement="left" title="Zoom">
+                    <img loading="lazy" class="h-auto" src="../images/products/product_0-2.jpg' %}" width="674" height="674" alt="">
+                    <a data-fancybox="gallery" href="{% static '/images/products/product_0-2.jpg' %}" data-bs-toggle="tooltip" data-bs-placement="left" title="Zoom">
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_zoom" /></svg>
                     </a>
                   </div>
                   <div class="swiper-slide product-single__image-item">
-                    <img loading="lazy" class="h-auto" src="../images/products/product_0-3.jpg" width="674" height="674" alt="">
-                    <a data-fancybox="gallery" href="../images/products/product_0-3.jpg" data-bs-toggle="tooltip" data-bs-placement="left" title="Zoom">
+                    <img loading="lazy" class="h-auto" src="../images/products/product_0-3.jpg' %}" width="674" height="674" alt="">
+                    <a data-fancybox="gallery" href="{% static '/images/products/product_0-3.jpg' %}" data-bs-toggle="tooltip" data-bs-placement="left" title="Zoom">
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_zoom" /></svg>
                     </a>
                   </div>
@@ -43,10 +43,10 @@
             <div class="product-single__thumbnail">
               <div class="swiper-container">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide product-single__image-item"><img loading="lazy" class="h-auto" src="../images/products/product_0.jpg" width="104" height="104" alt=""></div>
-                  <div class="swiper-slide product-single__image-item"><img loading="lazy" class="h-auto" src="../images/products/product_0-1.jpg" width="104" height="104" alt=""></div>
-                  <div class="swiper-slide product-single__image-item"><img loading="lazy" class="h-auto" src="../images/products/product_0-2.jpg" width="104" height="104" alt=""></div>
-                  <div class="swiper-slide product-single__image-item"><img loading="lazy" class="h-auto" src="../images/products/product_0-3.jpg" width="104" height="104" alt=""></div>
+                  <div class="swiper-slide product-single__image-item"><img loading="lazy" class="h-auto" src="../images/products/product_0.jpg' %}" width="104" height="104" alt=""></div>
+                  <div class="swiper-slide product-single__image-item"><img loading="lazy" class="h-auto" src="../images/products/product_0-1.jpg' %}" width="104" height="104" alt=""></div>
+                  <div class="swiper-slide product-single__image-item"><img loading="lazy" class="h-auto" src="../images/products/product_0-2.jpg' %}" width="104" height="104" alt=""></div>
+                  <div class="swiper-slide product-single__image-item"><img loading="lazy" class="h-auto" src="../images/products/product_0-3.jpg' %}" width="104" height="104" alt=""></div>
                 </div>
               </div>
             </div>
@@ -223,7 +223,7 @@
             <div class="product-single__reviews-list">
               <div class="product-single__reviews-item">
                 <div class="customer-avatar">
-                  <img loading="lazy" src="../images/avatar.jpg" alt="">
+                  <img loading="lazy" src="../images/avatar.jpg' %}" alt="">
                 </div>
                 <div class="customer-review">
                   <div class="customer-name">
@@ -244,7 +244,7 @@
               </div>
               <div class="product-single__reviews-item">
                 <div class="customer-avatar">
-                  <img loading="lazy" src="../images/avatar.jpg" alt="">
+                  <img loading="lazy" src="../images/avatar.jpg' %}" alt="">
                 </div>
                 <div class="customer-review">
                   <div class="customer-name">
@@ -357,8 +357,8 @@
             <div class="swiper-slide product-card">
               <div class="pc__img-wrapper">
                 <a href="product1_simple.html">
-                  <img loading="lazy" src="../images/products/product_3.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
-                  <img loading="lazy" src="../images/products/product_3-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
+                  <img loading="lazy" src="../images/products/product_3.jpg' %}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
+                  <img loading="lazy" src="../images/products/product_3-1.jpg' %}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
                 </a>
                 <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
               </div>
@@ -379,8 +379,8 @@
             <div class="swiper-slide product-card">
               <div class="pc__img-wrapper">
                 <a href="product1_simple.html">
-                  <img loading="lazy" src="../images/products/product_1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
-                  <img loading="lazy" src="../images/products/product_1-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
+                  <img loading="lazy" src="../images/products/product_1.jpg' %}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
+                  <img loading="lazy" src="../images/products/product_1-1.jpg' %}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
                 </a>
                 <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
               </div>
@@ -411,8 +411,8 @@
             <div class="swiper-slide product-card">
               <div class="pc__img-wrapper">
                 <a href="product1_simple.html">
-                  <img loading="lazy" src="../images/products/product_2.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
-                  <img loading="lazy" src="../images/products/product_2-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
+                  <img loading="lazy" src="../images/products/product_2.jpg' %}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
+                  <img loading="lazy" src="../images/products/product_2-1.jpg' %}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
                 </a>
                 <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
               </div>
@@ -433,8 +433,8 @@
             <div class="swiper-slide product-card">
               <div class="pc__img-wrapper">
                 <a href="product1_simple.html">
-                  <img loading="lazy" src="../images/products/product_6.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
-                  <img loading="lazy" src="../images/products/product_6-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
+                  <img loading="lazy" src="../images/products/product_6.jpg' %}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
+                  <img loading="lazy" src="../images/products/product_6-1.jpg' %}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
                 </a>
                 <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
               </div>
@@ -455,8 +455,8 @@
             <div class="swiper-slide product-card">
               <div class="pc__img-wrapper">
                 <a href="product1_simple.html">
-                  <img loading="lazy" src="../images/products/product_7.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
-                  <img loading="lazy" src="../images/products/product_7-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
+                  <img loading="lazy" src="../images/products/product_7.jpg' %}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
+                  <img loading="lazy" src="../images/products/product_7-1.jpg' %}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
                 </a>
                 <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
               </div>
@@ -477,8 +477,8 @@
             <div class="swiper-slide product-card">
               <div class="pc__img-wrapper">
                 <a href="product1_simple.html">
-                  <img loading="lazy" src="../images/products/product_4.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
-                  <img loading="lazy" src="../images/products/product_4-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
+                  <img loading="lazy" src="../images/products/product_4.jpg' %}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
+                  <img loading="lazy" src="../images/products/product_4-1.jpg' %}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
                 </a>
                 <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
               </div>
@@ -500,8 +500,8 @@
             <div class="swiper-slide product-card">
               <div class="pc__img-wrapper">
                 <a href="product1_simple.html">
-                  <img loading="lazy" src="../images/products/product_5.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
-                  <img loading="lazy" src="../images/products/product_5-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
+                  <img loading="lazy" src="../images/products/product_5.jpg' %}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
+                  <img loading="lazy" src="../images/products/product_5-1.jpg' %}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
                 </a>
                 <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
               </div>
@@ -522,8 +522,8 @@
             <div class="swiper-slide product-card">
               <div class="pc__img-wrapper">
                 <a href="product1_simple.html">
-                  <img loading="lazy" src="../images/products/product_8.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
-                  <img loading="lazy" src="../images/products/product_8-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
+                  <img loading="lazy" src="../images/products/product_8.jpg' %}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
+                  <img loading="lazy" src="../images/products/product_8-1.jpg' %}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
                 </a>
                 <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
               </div>

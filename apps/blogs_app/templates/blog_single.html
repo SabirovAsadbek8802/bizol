@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
   <main>
@@ -14,7 +15,7 @@
       </div>
       <div class="blog-single__item-content">
         <p>
-          <img loading="lazy" class="w-100 h-auto d-block" src="../images/blog/blog-14.jpg" width="1410" height="550" alt="">
+          <img loading="lazy" class="w-100 h-auto d-block" src="{% static '/images/blog/blog-14.jpg' %}" width="1410" height="550" alt="">
         </p>
         <div class="mw-930">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet sapien dignissim a elementum. Sociis metus, hendrerit mauris id in. Quis sit sit ultrices tincidunt euismod luctus diam. Turpis sodales orci etiam phasellus lacus id leo. Amet turpis nunc, nulla massa est viverra interdum. Praesent auctor nulla morbi non posuere mattis. Arcu eu id maecenas cras. Eget fames tincidunt leo, sed vitae, pretium interdum. Non massa, imperdiet nunc sit sapien. Tempor lectus ornare quis mi vel. Nibh euismod donec elit posuere lobortis consequat faucibus aliquam metus. Ornare consequat, vulputate sit maecenas mauris urna sed fringilla. Urna fermentum iaculis pharetra, maecenas dui nullam nullam rhoncus. Facilisis quis vulputate sem gravida lacus, justo placerat.</p>
@@ -43,10 +44,10 @@
         <div class="container mw-1170">
           <div class="row">
             <div class="col-md-6">
-              <p><img loading="lazy" class="w-100 h-auto d-block" src="../images/blog/blog-15.jpg" width="570" height="697" alt=""></p>
+              <p><img loading="lazy" class="w-100 h-auto d-block" src="{% static '/images/blog/blog-15.jpg' %}" width="570" height="697" alt=""></p>
             </div>
             <div class="col-md-6">
-              <p><img loading="lazy" class="w-100 h-auto d-block" src="../images/blog/blog-16.jpg" width="570" height="697" alt=""></p>
+              <p><img loading="lazy" class="w-100 h-auto d-block" src="{% static '/images/blog/blog-16.jpg' %}" width="570" height="697" alt=""></p>
             </div>
           </div>
         </div>
@@ -114,7 +115,7 @@
         <div class="blog-single__reviews-list">
           <div class="blog-single__reviews-item">
             <div class="customer-avatar">
-              <img loading="lazy" src="../images/avatar.jpg" alt="">
+              <img loading="lazy" src="{% static '/images/avatar.jpg' %}" alt="">
             </div>
             <div class="customer-review">
               <div class="customer-name">
@@ -135,7 +136,7 @@
           </div>
           <div class="blog-single__reviews-item">
             <div class="customer-avatar">
-              <img loading="lazy" src="../images/avatar.jpg" alt="">
+              <img loading="lazy" src="{% static '/images/avatar.jpg' %}" alt="">
             </div>
             <div class="customer-review">
               <div class="customer-name">
