@@ -3,7 +3,6 @@ from django.shortcuts import render
 def err_404(request):
     return render(request, '404.html')
 
-
 def faq(request):
     return render(request, 'faq.html')
 
@@ -13,6 +12,8 @@ def about(request):
 def terms(request):
     return render(request, 'terms.html')
 
+def home(request):
+    return render(request, 'index.html')
 
 def contact(request):
     return render(request, 'contact.html')
