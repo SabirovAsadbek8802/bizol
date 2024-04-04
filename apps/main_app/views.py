@@ -7,8 +7,12 @@ def err_404(request):
 def faq(request):
     return render(request, 'faq.html')
 
-# def index(request):
-#     return render(request, 'index.html')
+def about(request):
+    return render(request, 'about.html')
 
 def terms(request):
     return render(request, 'terms.html')
+
+
+def contact(request):
+    return render(request, 'contact.html')

@@ -10,8 +10,5 @@ def checkout(request):
 def order_complete(request):
     return render(request, 'shop_order_complete.html')
 
-def order_tracking(request):
-    return render(request, 'shop_order_tracking.html')
-
 def shop(request):
     return render(request, 'shop.html')
