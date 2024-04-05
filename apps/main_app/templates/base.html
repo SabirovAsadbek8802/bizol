@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="{% static 'css/plugins/jquery.fancybox.css' %}" type="text/css">
   <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 
+  
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--[if lt IE 9]>
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js' %}"></script>
@@ -33,6 +35,8 @@
 </head>
 
 <body>
+  
+
   <svg class="d-none">
     <symbol id="icon_nav" viewBox="0 0 25 18">
       <rect width="25" height="2"/><rect y="8" width="20" height="2"/><rect y="16" width="25" height="2"/>
@@ -440,9 +444,27 @@
             <li class="navigation__item">
               <a href="{% url 'contact' %}" class="navigation__link">Contact</a>
             </li>
+            {% if user.is_authenticated %}
+            <li class="navigation__item">
+              <a href="{% url 'logout' %}" class="navigation__link">Logout</a>
+            </li>
+            {% else %}
+            <li class="navigation__item">
+              <a href="{% url 'login' %}" class="navigation__link">Login</a>
+            </li>
+            {%endif%}
+
+           
           </ul><!-- /.navigation__list -->
         </nav><!-- /.navigation -->
-
+        {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor%}
+{% endif %}
         <div class="header-tools d-flex align-items-center">
           <div class="header-tools__item hover-container">
             <div class="js-hover__open position-relative">
@@ -505,7 +527,7 @@
   </header>
   <!-- End Header Type 1 -->
 
-
+  
   {% block content %}
 
   {% endblock %}
