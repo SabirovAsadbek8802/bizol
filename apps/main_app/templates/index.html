@@ -215,10 +215,12 @@
                   }
                 }'>
                 <div class="swiper-wrapper">
+
+                  {% for product in products %}
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
-                        <img loading="lazy" src="{% static '/images/home/demo5/product-0-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
+                      <a href="{% url 'product-simple' %}">
+                        <img loading="lazy" src="{{product.image.url}}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
                       <div class="anim_appear-right position-absolute top-0 mt-2 me-2">
@@ -232,17 +234,23 @@
                     </div>
       
                     <div class="pc__info position-relative">
-                      <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cropped Faux Leather Jacket</a></h6>
+                      <p class="pc__category">{{product.category}}</p>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">{{ product.name }}</a></h6>
                       <div class="product-card__price d-flex">
-                        <span class="money price">$29</span>
+                        {% if product.is_sale %}
+                          <span class="money price price-old">${{product.price}}</span>
+                          <span class="money price price-sale">${{product.sale_price}}</span>
+                        {% else %}
+                          <span class="money price">${{product.price}}</span>
+                        {% endif %}
                       </div>
                     </div>
                   </div>
+
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
-                        <img loading="lazy" src="{% static '/images/home/demo5/product-1-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
+                      <a href="{% url 'product-simple' %}">
+                        <img loading="lazy" src="{{product.image.url}}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
                       <div class="anim_appear-right position-absolute top-0 mt-2 me-2">
@@ -256,17 +264,23 @@
                     </div>
       
                     <div class="pc__info position-relative">
-                      <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Calvin Shorts</a></h6>
+                      <p class="pc__category">{{product.category}}</p>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">{{ product.name }}</a></h6>
                       <div class="product-card__price d-flex">
-                        <span class="money price">$62</span>
+                        {% if product.is_sale %}
+                          <span class="money price price-old">${{product.price}}</span>
+                          <span class="money price price-sale">${{product.sale_price}}</span>
+                        {% else %}
+                          <span class="money price">${{product.price}}</span>
+                        {% endif %}
                       </div>
                     </div>
                   </div>
+
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
-                        <img loading="lazy" src="{% static '/images/home/demo5/product-2-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
+                      <a href="{% url 'product-simple' %}">
+                        <img loading="lazy" src="{{product.image.url}}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
                       <div class="anim_appear-right position-absolute top-0 mt-2 me-2">
@@ -280,185 +294,21 @@
                     </div>
       
                     <div class="pc__info position-relative">
-                      <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Kirby T-Shirt</a></h6>
+                      <p class="pc__category">{{product.category}}</p>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">{{ product.name }}</a></h6>
                       <div class="product-card__price d-flex">
-                        <span class="money price">$17</span>
+                        {% if product.is_sale %}
+                          <span class="money price price-old">${{product.price}}</span>
+                          <span class="money price price-sale">${{product.sale_price}}</span>
+                        {% else %}
+                          <span class="money price">${{product.price}}</span>
+                        {% endif %}
                       </div>
                     </div>
                   </div>
-                  <div class="swiper-slide product-card">
-                    <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
-                        <img loading="lazy" src="{% static '/images/home/demo5/product-3-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
-                      </a>
-                      <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                      <div class="anim_appear-right position-absolute top-0 mt-2 me-2">
-                        <button class="btn btn-round-sm btn-hover-red d-block border-0 text-uppercase mb-2 js-quick-view" data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                          <svg class="d-inline-block" width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><use href="#icon_view" /></svg>
-                        </button>
-                        <button class="btn btn-round-sm btn-hover-red d-block border-0 text-uppercase js-add-wishlist" title="Add To Wishlist">
-                          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
-                        </button>
-                      </div>
-                    </div>
-      
-                    <div class="pc__info position-relative">
-                      <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cableknit Shawl</a></h6>
-                      <div class="product-card__price d-flex">
-                        <span class="money price price-old">$129</span>
-                        <span class="money price price-sale">$99</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide product-card">
-                    <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
-                        <img loading="lazy" src="{% static '/images/home/demo5/product-4-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
-                      </a>
-                      <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                      <div class="anim_appear-right position-absolute top-0 mt-2 me-2">
-                        <button class="btn btn-round-sm btn-hover-red d-block border-0 text-uppercase mb-2 js-quick-view" data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                          <svg class="d-inline-block" width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><use href="#icon_view" /></svg>
-                        </button>
-                        <button class="btn btn-round-sm btn-hover-red d-block border-0 text-uppercase js-add-wishlist" title="Add To Wishlist">
-                          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
-                        </button>
-                      </div>
-                    </div>
-      
-                    <div class="pc__info position-relative">
-                      <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Shirt In Botanical Cheetah Print</a></h6>
-                      <div class="product-card__price d-flex">
-                        <span class="money price price-old">$129</span>
-                        <span class="money price price-sale">$99</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide product-card">
-                    <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
-                        <img loading="lazy" src="{% static '/images/home/demo5/product-0-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
-                      </a>
-                      <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                      <div class="anim_appear-right position-absolute top-0 mt-2 me-2">
-                        <button class="btn btn-round-sm btn-hover-red d-block border-0 text-uppercase mb-2 js-quick-view" data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                          <svg class="d-inline-block" width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><use href="#icon_view" /></svg>
-                        </button>
-                        <button class="btn btn-round-sm btn-hover-red d-block border-0 text-uppercase js-add-wishlist" title="Add To Wishlist">
-                          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
-                        </button>
-                      </div>
-                    </div>
-      
-                    <div class="pc__info position-relative">
-                      <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cropped Faux Leather Jacket</a></h6>
-                      <div class="product-card__price d-flex">
-                        <span class="money price">$29</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide product-card">
-                    <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
-                        <img loading="lazy" src="{% static '/images/home/demo5/product-1-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
-                      </a>
-                      <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                      <div class="anim_appear-right position-absolute top-0 mt-2 me-2">
-                        <button class="btn btn-round-sm btn-hover-red d-block border-0 text-uppercase mb-2 js-quick-view" data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                          <svg class="d-inline-block" width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><use href="#icon_view" /></svg>
-                        </button>
-                        <button class="btn btn-round-sm btn-hover-red d-block border-0 text-uppercase js-add-wishlist" title="Add To Wishlist">
-                          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
-                        </button>
-                      </div>
-                    </div>
-      
-                    <div class="pc__info position-relative">
-                      <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Calvin Shorts</a></h6>
-                      <div class="product-card__price d-flex">
-                        <span class="money price">$62</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide product-card">
-                    <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
-                        <img loading="lazy" src="{% static '/images/home/demo5/product-2-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
-                      </a>
-                      <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                      <div class="anim_appear-right position-absolute top-0 mt-2 me-2">
-                        <button class="btn btn-round-sm btn-hover-red d-block border-0 text-uppercase mb-2 js-quick-view" data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                          <svg class="d-inline-block" width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><use href="#icon_view" /></svg>
-                        </button>
-                        <button class="btn btn-round-sm btn-hover-red d-block border-0 text-uppercase js-add-wishlist" title="Add To Wishlist">
-                          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
-                        </button>
-                      </div>
-                    </div>
-      
-                    <div class="pc__info position-relative">
-                      <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Kirby T-Shirt</a></h6>
-                      <div class="product-card__price d-flex">
-                        <span class="money price">$17</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide product-card">
-                    <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
-                        <img loading="lazy" src="{% static '/images/home/demo5/product-3-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
-                      </a>
-                      <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                      <div class="anim_appear-right position-absolute top-0 mt-2 me-2">
-                        <button class="btn btn-round-sm btn-hover-red d-block border-0 text-uppercase mb-2 js-quick-view" data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                          <svg class="d-inline-block" width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><use href="#icon_view" /></svg>
-                        </button>
-                        <button class="btn btn-round-sm btn-hover-red d-block border-0 text-uppercase js-add-wishlist" title="Add To Wishlist">
-                          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
-                        </button>
-                      </div>
-                    </div>
-      
-                    <div class="pc__info position-relative">
-                      <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cableknit Shawl</a></h6>
-                      <div class="product-card__price d-flex">
-                        <span class="money price price-old">$129</span>
-                        <span class="money price price-sale">$99</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide product-card">
-                    <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
-                        <img loading="lazy" src="{% static '/images/home/demo5/product-4-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
-                      </a>
-                      <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                      <div class="anim_appear-right position-absolute top-0 mt-2 me-2">
-                        <button class="btn btn-round-sm btn-hover-red d-block border-0 text-uppercase mb-2 js-quick-view" data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                          <svg class="d-inline-block" width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><use href="#icon_view" /></svg>
-                        </button>
-                        <button class="btn btn-round-sm btn-hover-red d-block border-0 text-uppercase js-add-wishlist" title="Add To Wishlist">
-                          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
-                        </button>
-                      </div>
-                    </div>
-      
-                    <div class="pc__info position-relative">
-                      <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Shirt In Botanical Cheetah Print</a></h6>
-                      <div class="product-card__price d-flex">
-                        <span class="money price price-old">$129</span>
-                        <span class="money price price-sale">$99</span>
-                      </div>
-                    </div>
-                  </div>
+                  {% endfor %}
+
+
                 </div><!-- /.swiper-wrapper -->
               </div><!-- /.swiper-container js-swiper-slider -->
       
@@ -521,7 +371,7 @@
                 <div class="swiper-wrapper">
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-1-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -537,7 +387,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Calvin Shorts</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Calvin Shorts</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$62</span>
                       </div>
@@ -545,7 +395,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-2-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -561,7 +411,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Kirby T-Shirt</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Kirby T-Shirt</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$17</span>
                       </div>
@@ -569,7 +419,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-3-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -585,7 +435,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cableknit Shawl</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cableknit Shawl</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price price-old">$129</span>
                         <span class="money price price-sale">$99</span>
@@ -594,7 +444,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-4-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -610,7 +460,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Shirt In Botanical Cheetah Print</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Shirt In Botanical Cheetah Print</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price price-old">$129</span>
                         <span class="money price price-sale">$99</span>
@@ -619,7 +469,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-0-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -635,7 +485,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cropped Faux Leather Jacket</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cropped Faux Leather Jacket</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$29</span>
                       </div>
@@ -643,7 +493,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-1-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -659,7 +509,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Calvin Shorts</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Calvin Shorts</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$62</span>
                       </div>
@@ -667,7 +517,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-2-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -683,7 +533,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Kirby T-Shirt</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Kirby T-Shirt</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$17</span>
                       </div>
@@ -691,7 +541,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-3-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -707,7 +557,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cableknit Shawl</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cableknit Shawl</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price price-old">$129</span>
                         <span class="money price price-sale">$99</span>
@@ -716,7 +566,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-4-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -732,7 +582,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Shirt In Botanical Cheetah Print</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Shirt In Botanical Cheetah Print</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price price-old">$129</span>
                         <span class="money price price-sale">$99</span>
@@ -741,7 +591,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-0-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -757,7 +607,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cropped Faux Leather Jacket</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cropped Faux Leather Jacket</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$29</span>
                       </div>
@@ -825,7 +675,7 @@
                 <div class="swiper-wrapper">
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-2-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -841,7 +691,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Kirby T-Shirt</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Kirby T-Shirt</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$17</span>
                       </div>
@@ -849,7 +699,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-3-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -865,7 +715,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cableknit Shawl</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cableknit Shawl</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price price-old">$129</span>
                         <span class="money price price-sale">$99</span>
@@ -874,7 +724,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-4-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -890,7 +740,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Shirt In Botanical Cheetah Print</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Shirt In Botanical Cheetah Print</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price price-old">$129</span>
                         <span class="money price price-sale">$99</span>
@@ -899,7 +749,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-0-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -915,7 +765,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cropped Faux Leather Jacket</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cropped Faux Leather Jacket</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$29</span>
                       </div>
@@ -923,7 +773,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-1-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -939,7 +789,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Calvin Shorts</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Calvin Shorts</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$62</span>
                       </div>
@@ -947,7 +797,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-2-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -963,7 +813,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Kirby T-Shirt</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Kirby T-Shirt</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$17</span>
                       </div>
@@ -971,7 +821,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-3-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -987,7 +837,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cableknit Shawl</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cableknit Shawl</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price price-old">$129</span>
                         <span class="money price price-sale">$99</span>
@@ -996,7 +846,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-4-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1012,7 +862,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Shirt In Botanical Cheetah Print</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Shirt In Botanical Cheetah Print</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price price-old">$129</span>
                         <span class="money price price-sale">$99</span>
@@ -1021,7 +871,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-0-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1037,7 +887,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cropped Faux Leather Jacket</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cropped Faux Leather Jacket</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$29</span>
                       </div>
@@ -1045,7 +895,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-1-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1061,7 +911,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Calvin Shorts</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Calvin Shorts</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$62</span>
                       </div>
@@ -1129,7 +979,7 @@
                 <div class="swiper-wrapper">
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-3-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1145,7 +995,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cableknit Shawl</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cableknit Shawl</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price price-old">$129</span>
                         <span class="money price price-sale">$99</span>
@@ -1154,7 +1004,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-4-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1170,7 +1020,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Shirt In Botanical Cheetah Print</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Shirt In Botanical Cheetah Print</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price price-old">$129</span>
                         <span class="money price price-sale">$99</span>
@@ -1179,7 +1029,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-0-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1195,7 +1045,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cropped Faux Leather Jacket</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cropped Faux Leather Jacket</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$29</span>
                       </div>
@@ -1203,7 +1053,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-1-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1219,7 +1069,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Calvin Shorts</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Calvin Shorts</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$62</span>
                       </div>
@@ -1227,7 +1077,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-2-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1243,7 +1093,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Kirby T-Shirt</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Kirby T-Shirt</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$17</span>
                       </div>
@@ -1251,7 +1101,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-3-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1267,7 +1117,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cableknit Shawl</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cableknit Shawl</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price price-old">$129</span>
                         <span class="money price price-sale">$99</span>
@@ -1276,7 +1126,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-4-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1292,7 +1142,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Shirt In Botanical Cheetah Print</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Shirt In Botanical Cheetah Print</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price price-old">$129</span>
                         <span class="money price price-sale">$99</span>
@@ -1301,7 +1151,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-0-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1317,7 +1167,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cropped Faux Leather Jacket</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cropped Faux Leather Jacket</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$29</span>
                       </div>
@@ -1325,7 +1175,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-1-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1341,7 +1191,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Calvin Shorts</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Calvin Shorts</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$62</span>
                       </div>
@@ -1349,7 +1199,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-2-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1365,7 +1215,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Kirby T-Shirt</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Kirby T-Shirt</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$17</span>
                       </div>
@@ -1433,7 +1283,7 @@
                 <div class="swiper-wrapper">
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-4-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1449,7 +1299,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Shirt In Botanical Cheetah Print</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Shirt In Botanical Cheetah Print</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price price-old">$129</span>
                         <span class="money price price-sale">$99</span>
@@ -1458,7 +1308,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-0-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1474,7 +1324,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cropped Faux Leather Jacket</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cropped Faux Leather Jacket</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$29</span>
                       </div>
@@ -1482,7 +1332,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-1-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1498,7 +1348,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Calvin Shorts</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Calvin Shorts</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$62</span>
                       </div>
@@ -1506,7 +1356,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-2-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1522,7 +1372,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Kirby T-Shirt</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Kirby T-Shirt</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$17</span>
                       </div>
@@ -1530,7 +1380,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-3-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1546,7 +1396,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cableknit Shawl</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cableknit Shawl</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price price-old">$129</span>
                         <span class="money price price-sale">$99</span>
@@ -1555,7 +1405,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-4-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1571,7 +1421,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Shirt In Botanical Cheetah Print</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Shirt In Botanical Cheetah Print</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price price-old">$129</span>
                         <span class="money price price-sale">$99</span>
@@ -1580,7 +1430,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-0-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1596,7 +1446,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cropped Faux Leather Jacket</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cropped Faux Leather Jacket</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$29</span>
                       </div>
@@ -1604,7 +1454,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-1-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1620,7 +1470,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Calvin Shorts</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Calvin Shorts</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$62</span>
                       </div>
@@ -1628,7 +1478,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-2-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1644,7 +1494,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Kirby T-Shirt</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Kirby T-Shirt</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$17</span>
                       </div>
@@ -1652,7 +1502,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-3-1.jpg'%}" width="260" height="315" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1668,7 +1518,7 @@
       
                     <div class="pc__info position-relative">
                       <p class="pc__category">Dresses</p>
-                      <h6 class="pc__title"><a href="product1_simple.html">Cableknit Shawl</a></h6>
+                      <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cableknit Shawl</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price price-old">$129</span>
                         <span class="money price price-sale">$99</span>
@@ -1696,52 +1546,6 @@
     </div>
 
     <div class="pt-1 pb-5 mb-4 mb-xl-5"></div>
-
-    <section class="lookbook">
-      <div class="container">
-        <h2 class="section-title fw-normal text-center mb-3 pb-xl-3 mb-xl-4">LookBook</h2>
-        <div class="row">
-          <div class="col-md-6 col-xl-3">
-            <div class="lookbook-item position-relative mb-4">
-              <img loading="lazy" class="w-100 h-auto" src="{% static '/images/home/demo5/lookbook-1.jpg'%}" width="330" height="430" alt="">
-              <div class="position-absolute left-0 bottom-0 width-100 px-3 mx-3 mb-3 pb-2">
-                <p class="mb-1 text-uppercase text-white">Women Seasons</p>
-                <a href="shop1.html" class="d-inline-block h5 mb-0 text-white">Floral Dress</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <div class="lookbook-item position-relative mb-4">
-              <img loading="lazy" class="w-100 h-auto" src="{% static '/images/home/demo5/lookbook-2.jpg'%}" width="330" height="430" alt="">
-              <div class="position-absolute left-0 bottom-0 width-100 px-3 mx-3 mb-3 pb-2">
-                <p class="mb-1 text-uppercase text-white">Women Seasons</p>
-                <a href="shop1.html" class="d-inline-block h5 mb-0 text-white">Trench Coat</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <div class="lookbook-item position-relative mb-4">
-              <img loading="lazy" class="w-100 h-auto" src="{% static '/images/home/demo5/lookbook-3.jpg'%}" width="330" height="430" alt="">
-              <div class="position-absolute left-0 bottom-0 width-100 px-3 mx-3 mb-3 pb-2">
-                <p class="mb-1 text-uppercase text-white">Men Seasons</p>
-                <a href="shop1.html" class="d-inline-block h5 mb-0 text-white">Folk Pants</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <div class="lookbook-item position-relative mb-4">
-              <img loading="lazy" class="w-100 h-auto" src="{% static '/images/home/demo5/lookbook-4.jpg'%}" width="330" height="430" alt="">
-              <div class="position-absolute left-0 bottom-0 width-100 px-3 mx-3 mb-3 pb-2">
-                <p class="mb-1 text-uppercase text-white">Men Seasons</p>
-                <a href="shop1.html" class="d-inline-block h5 mb-0 text-white">Cos Jacket</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="pt-1 pb-5 mt-4 mt-xl-5"></div>
 
     <div class="bg-white">
       <div class="mb-4 mb-xl-5 pt-1 pb-5"></div>
@@ -1785,7 +1589,7 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide product-card">
                 <div class="pc__img-wrapper">
-                  <a href="product1_simple.html">
+                  <a href="{% url 'product-simple' %}">
                     <img loading="lazy" src="{% static '/images/home/demo5/product-5-1.jpg'%}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
                   </a>
                   <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1801,7 +1605,7 @@
   
                 <div class="pc__info position-relative">
                   <p class="pc__category">Dresses</p>
-                  <h6 class="pc__title"><a href="product1_simple.html">Hub Accent Mirror</a></h6>
+                  <h6 class="pc__title"><a href="{% url 'product-simple' %}">Hub Accent Mirror</a></h6>
                   <div class="product-card__price d-flex">
                     <span class="money price">$29</span>
                   </div>
@@ -1809,7 +1613,7 @@
               </div>
               <div class="swiper-slide product-card">
                 <div class="pc__img-wrapper">
-                  <a href="product1_simple.html">
+                  <a href="{% url 'product-simple' %}">
                     <img loading="lazy" src="{% static '/images/home/demo5/product-6-1.jpg'%}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
                   </a>
                   <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1825,7 +1629,7 @@
   
                 <div class="pc__info position-relative">
                   <p class="pc__category">Dresses</p>
-                  <h6 class="pc__title"><a href="product1_simple.html">Hosking Blue Area Rug</a></h6>
+                  <h6 class="pc__title"><a href="{% url 'product-simple' %}">Hosking Blue Area Rug</a></h6>
                   <div class="product-card__price d-flex">
                     <span class="money price">$62</span>
                   </div>
@@ -1833,7 +1637,7 @@
               </div>
               <div class="swiper-slide product-card">
                 <div class="pc__img-wrapper">
-                  <a href="product1_simple.html">
+                  <a href="{% url 'product-simple' %}">
                     <img loading="lazy" src="{% static '/images/home/demo5/product-7-1.jpg'%}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
                   </a>
                   <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1849,7 +1653,7 @@
   
                 <div class="pc__info position-relative">
                   <p class="pc__category">Dresses</p>
-                  <h6 class="pc__title"><a href="product1_simple.html">Hanneman Pouf</a></h6>
+                  <h6 class="pc__title"><a href="{% url 'product-simple' %}">Hanneman Pouf</a></h6>
                   <div class="product-card__price d-flex">
                     <span class="money price">$17</span>
                   </div>
@@ -1857,7 +1661,7 @@
               </div>
               <div class="swiper-slide product-card">
                 <div class="pc__img-wrapper">
-                  <a href="product1_simple.html">
+                  <a href="{% url 'product-simple' %}">
                     <img loading="lazy" src="{% static '/images/home/demo5/product-8-1.jpg'%}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
                   </a>
                   <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1873,7 +1677,7 @@
   
                 <div class="pc__info position-relative">
                   <p class="pc__category">Dresses</p>
-                  <h6 class="pc__title"><a href="product1_simple.html">Cushion Futon Slipcover</a></h6>
+                  <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cushion Futon Slipcover</a></h6>
                   <div class="product-card__price d-flex">
                     <span class="money price price-old">$129</span>
                     <span class="money price price-sale">$99</span>
@@ -1882,7 +1686,7 @@
               </div>
               <div class="swiper-slide product-card">
                 <div class="pc__img-wrapper">
-                  <a href="product1_simple.html">
+                  <a href="{% url 'product-simple' %}">
                     <img loading="lazy" src="{% static '/images/home/demo5/product-5-1.jpg'%}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
                   </a>
                   <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1898,7 +1702,7 @@
   
                 <div class="pc__info position-relative">
                   <p class="pc__category">Dresses</p>
-                  <h6 class="pc__title"><a href="product1_simple.html">Hub Accent Mirror</a></h6>
+                  <h6 class="pc__title"><a href="{% url 'product-simple' %}">Hub Accent Mirror</a></h6>
                   <div class="product-card__price d-flex">
                     <span class="money price">$29</span>
                   </div>
@@ -1906,7 +1710,7 @@
               </div>
               <div class="swiper-slide product-card">
                 <div class="pc__img-wrapper">
-                  <a href="product1_simple.html">
+                  <a href="{% url 'product-simple' %}">
                     <img loading="lazy" src="{% static '/images/home/demo5/product-6-1.jpg'%}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
                   </a>
                   <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1922,7 +1726,7 @@
   
                 <div class="pc__info position-relative">
                   <p class="pc__category">Dresses</p>
-                  <h6 class="pc__title"><a href="product1_simple.html">Hosking Blue Area Rug</a></h6>
+                  <h6 class="pc__title"><a href="{% url 'product-simple' %}">Hosking Blue Area Rug</a></h6>
                   <div class="product-card__price d-flex">
                     <span class="money price">$62</span>
                   </div>
@@ -1930,7 +1734,7 @@
               </div>
               <div class="swiper-slide product-card">
                 <div class="pc__img-wrapper">
-                  <a href="product1_simple.html">
+                  <a href="{% url 'product-simple' %}">
                     <img loading="lazy" src="{% static '/images/home/demo5/product-7-1.jpg'%}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
                   </a>
                   <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1946,7 +1750,7 @@
   
                 <div class="pc__info position-relative">
                   <p class="pc__category">Dresses</p>
-                  <h6 class="pc__title"><a href="product1_simple.html">Hanneman Pouf</a></h6>
+                  <h6 class="pc__title"><a href="{% url 'product-simple' %}">Hanneman Pouf</a></h6>
                   <div class="product-card__price d-flex">
                     <span class="money price">$17</span>
                   </div>
@@ -1954,7 +1758,7 @@
               </div>
               <div class="swiper-slide product-card">
                 <div class="pc__img-wrapper">
-                  <a href="product1_simple.html">
+                  <a href="{% url 'product-simple' %}">
                     <img loading="lazy" src="{% static '/images/home/demo5/product-8-1.jpg'%}" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
                   </a>
                   <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -1970,7 +1774,7 @@
   
                 <div class="pc__info position-relative">
                   <p class="pc__category">Dresses</p>
-                  <h6 class="pc__title"><a href="product1_simple.html">Cushion Futon Slipcover</a></h6>
+                  <h6 class="pc__title"><a href="{% url 'product-simple' %}">Cushion Futon Slipcover</a></h6>
                   <div class="product-card__price d-flex">
                     <span class="money price price-old">$129</span>
                     <span class="money price price-sale">$99</span>
@@ -2068,7 +1872,7 @@
                 <div class="swiper-wrapper">
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-10-1.jpg'%}" width="258" height="313" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -2083,7 +1887,7 @@
                     </div>
       
                     <div class="pc__info position-relative text-white">
-                      <h6 class="pc__title text-white"><a href="product1_simple.html" class="text-white">Cropped Faux Leather Jacket</a></h6>
+                      <h6 class="pc__title text-white"><a href="{% url 'product-simple' %}" class="text-white">Cropped Faux Leather Jacket</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$29</span>
                       </div>
@@ -2091,7 +1895,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-11-1.jpg'%}" width="258" height="313" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -2106,7 +1910,7 @@
                     </div>
       
                     <div class="pc__info position-relative text-white">
-                      <h6 class="pc__title text-white"><a href="product1_simple.html" class="text-white">Calvin Shorts</a></h6>
+                      <h6 class="pc__title text-white"><a href="{% url 'product-simple' %}" class="text-white">Calvin Shorts</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$62</span>
                       </div>
@@ -2114,7 +1918,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-12-1.jpg'%}" width="258" height="313" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -2129,7 +1933,7 @@
                     </div>
       
                     <div class="pc__info position-relative text-white">
-                      <h6 class="pc__title text-white"><a href="product1_simple.html" class="text-white">Kriby T-Shirt</a></h6>
+                      <h6 class="pc__title text-white"><a href="{% url 'product-simple' %}" class="text-white">Kriby T-Shirt</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$62</span>
                       </div>
@@ -2137,7 +1941,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-13-1.jpg'%}" width="258" height="313" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -2152,7 +1956,7 @@
                     </div>
       
                     <div class="pc__info position-relative text-white">
-                      <h6 class="pc__title text-white"><a href="product1_simple.html" class="text-white">Cableknit Shawl</a></h6>
+                      <h6 class="pc__title text-white"><a href="{% url 'product-simple' %}" class="text-white">Cableknit Shawl</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$99</span>
                       </div>
@@ -2160,7 +1964,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-10-1.jpg'%}" width="258" height="313" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -2175,7 +1979,7 @@
                     </div>
       
                     <div class="pc__info position-relative text-white">
-                      <h6 class="pc__title text-white"><a href="product1_simple.html" class="text-white">Cropped Faux Leather Jacket</a></h6>
+                      <h6 class="pc__title text-white"><a href="{% url 'product-simple' %}" class="text-white">Cropped Faux Leather Jacket</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$29</span>
                       </div>
@@ -2183,7 +1987,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-11-1.jpg'%}" width="258" height="313" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -2198,7 +2002,7 @@
                     </div>
       
                     <div class="pc__info position-relative text-white">
-                      <h6 class="pc__title text-white"><a href="product1_simple.html" class="text-white">Calvin Shorts</a></h6>
+                      <h6 class="pc__title text-white"><a href="{% url 'product-simple' %}" class="text-white">Calvin Shorts</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$62</span>
                       </div>
@@ -2206,7 +2010,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-12-1.jpg'%}" width="258" height="313" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -2221,7 +2025,7 @@
                     </div>
       
                     <div class="pc__info position-relative text-white">
-                      <h6 class="pc__title text-white"><a href="product1_simple.html" class="text-white">Kriby T-Shirt</a></h6>
+                      <h6 class="pc__title text-white"><a href="{% url 'product-simple' %}" class="text-white">Kriby T-Shirt</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$62</span>
                       </div>
@@ -2229,7 +2033,7 @@
                   </div>
                   <div class="swiper-slide product-card">
                     <div class="pc__img-wrapper">
-                      <a href="product1_simple.html">
+                      <a href="{% url 'product-simple' %}">
                         <img loading="lazy" src="{% static '/images/home/demo5/product-13-1.jpg'%}" width="258" height="313" alt="Cropped Faux leather Jacket" class="pc__img">
                       </a>
                       <button class="pc__atc btn btn-lg anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
@@ -2244,7 +2048,7 @@
                     </div>
       
                     <div class="pc__info position-relative text-white">
-                      <h6 class="pc__title text-white"><a href="product1_simple.html" class="text-white">Cableknit Shawl</a></h6>
+                      <h6 class="pc__title text-white"><a href="{% url 'product-simple' %}" class="text-white">Cableknit Shawl</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price">$99</span>
                       </div>

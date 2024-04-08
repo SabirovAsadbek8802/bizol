@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Category
+from apps.store_app.models import Product
 
 def err_404(request):
     return render(request, '404.html')
@@ -15,7 +16,11 @@ def terms(request):
 
 def home(request):
     categories = Category.objects.all()
-    return render(request, 'index.html', {'categories': categories})
+    products = Product.objects.all()
+    return render(request, 'index.html', {
+        'categories': categories,
+        'products': products
+        })
 
 def contact(request):
     return render(request, 'contact.html')
