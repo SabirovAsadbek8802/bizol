@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Category
 from apps.store_app.models import Product
 
+
 def err_404(request):
     return render(request, '404.html')
 
@@ -24,3 +25,6 @@ def home(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+
+
