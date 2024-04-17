@@ -10,4 +10,5 @@ urlpatterns = [
     path('edit/', views.account_edit),
     path('orders/', views.account_orders),
     path('wishlist/', views.account_wishlist),
+    path('profile/', views.account_dashboard, name='account-profile'),
 ]

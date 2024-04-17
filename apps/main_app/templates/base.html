@@ -324,7 +324,7 @@
               <div class="sub-menu position-absolute top-0 start-100 w-100 d-none">
                 <a href="#" class="navigation__link js-nav-left d-flex align-items-center border-bottom mb-2"><svg class="me-2" width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_prev_sm" /></svg>Blog</a>
                 <ul class="list-unstyled">
-                  <li class="sub-menu__item"><a href="blog_list1.html" class="menu-link menu-link_us-s">Blog V1</a></li>
+                  <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Blog V1</a></li>
                   <li class="sub-menu__item"><a href="blog_list2.html" class="menu-link menu-link_us-s">Blog V2</a></li>
                   <li class="sub-menu__item"><a href="blog_list3.html" class="menu-link menu-link_us-s">Blog V3</a></li>
                   <li class="sub-menu__item"><a href="blog_single.html" class="menu-link menu-link_us-s">Blog Detail</a></li>
@@ -350,11 +350,11 @@
             </li>
 
             <li class="navigation__item">
-              <a href="about.html" class="navigation__link">About</a>
+              <a href="{% url 'about' %}" class="navigation__link">About</a>
             </li>
 
             <li class="navigation__item">
-              <a href="contact.html" class="navigation__link">Contact</a>
+              <a href="{% url 'contact' %}" class="navigation__link">Contact</a>
             </li>
           </ul><!-- /.navigation__list -->
         </div><!-- /.overflow-hidden -->
@@ -364,17 +364,6 @@
         <div class="customer-links container mt-4 mb-2 pb-1">
           <svg class="d-inline-block align-middle" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_user" /></svg>
           <span class="d-inline-block ms-2 text-uppercase align-middle fw-medium">My Account</span>
-        </div>
-
-        <div class="container d-flex align-items-center">
-          <label for="footerSettingsLanguage_mobile" class="me-2 text-secondary">Language</label>
-          <select id="footerSettingsLanguage_mobile" class="form-select form-select-sm bg-transparent border-0" aria-label="Default select example" name="store-language">
-            <option class="footer-select__option" selected>United Kingdom | English</option>
-            <option class="footer-select__option" value="1">United States | English</option>
-            <option class="footer-select__option" value="2">German</option>
-            <option class="footer-select__option" value="3">French</option>
-            <option class="footer-select__option" value="4">Swedish</option>
-          </select>
         </div>
 
         <div class="container d-flex align-items-center">
@@ -544,16 +533,16 @@
         <div class="footer-column footer-store-info col-12 mb-4 mb-lg-0">
           <div class="logo">
             <a href="index.html">
-              <img src="{% static 'images/logo.png' %}" alt="Uomo" class="logo__image d-block">
+              <img src="{% static 'images/icon_bizol.png' %}" alt="Bizol" class="logo__image d-block">
             </a>
           </div><!-- /.logo -->
-          <p class="footer-address">1418 River Drive, Suite 35 Cottonhall, CA 9622 United States</p>
+          <p class="footer-address">220100 Urgench C, Amir Temur 29, KH 220500 Uzbekistan</p>
 
           <p class="m-0">
-            <strong class="fw-medium">sale@uomo.com</strong>
+            <strong class="fw-medium">sabirovasadbek1605@gmail.com</strong>
           </p>
           <p>
-            <strong class="fw-medium">+1 246-345-0695</strong>
+            <strong class="fw-medium">+998 88-510-8802</strong>
           </p>
 
           <ul class="social-links list-unstyled d-flex flex-wrap mb-0">
@@ -588,41 +577,41 @@
         <div class="footer-column footer-menu mb-4 mb-lg-0">
           <h6 class="sub-menu__title text-uppercase">Company</h6>
           <ul class="sub-menu__list list-unstyled">
-            <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">About Us</a></li>
-            <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Careers</a></li>
-            <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Affiliates</a></li>
-            <li class="sub-menu__item"><a href="blog_list1.html" class="menu-link menu-link_us-s">Blog</a></li>
-            <li class="sub-menu__item"><a href="contact.html" class="menu-link menu-link_us-s">Contact Us</a></li>
+            <li class="sub-menu__item"><a href="{% url 'about' %}" class="menu-link menu-link_us-s">About Us</a></li>
+            <li class="sub-menu__item"><a href="{% url 'about' %}" class="menu-link menu-link_us-s">Why Bizol</a></li>
+            <li class="sub-menu__item"><a href="{% url 'about' %}" class="menu-link menu-link_us-s">Affiliates</a></li>
+            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Awards</a></li>
+            <li class="sub-menu__item"><a href="{% url 'contact' %}" class="menu-link menu-link_us-s">Contact Us</a></li>
           </ul>
         </div><!-- /.footer-column -->
 
         <div class="footer-column footer-menu mb-4 mb-lg-0">
           <h6 class="sub-menu__title text-uppercase">Shop</h6>
           <ul class="sub-menu__list list-unstyled">
-            <li class="sub-menu__item"><a href="shop2.html" class="menu-link menu-link_us-s">New Arrivals</a></li>
-            <li class="sub-menu__item"><a href="shop3.html" class="menu-link menu-link_us-s">Accessories</a></li>
-            <li class="sub-menu__item"><a href="shop4.html" class="menu-link menu-link_us-s">Men</a></li>
-            <li class="sub-menu__item"><a href="shop5.html" class="menu-link menu-link_us-s">Women</a></li>
-            <li class="sub-menu__item"><a href="shop1.html" class="menu-link menu-link_us-s">Shop All</a></li>
+            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">New Arrivals</a></li>
+            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Accessories</a></li>
+            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Vehicles</a></li>
+            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Trucks</a></li>
+            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Shop All</a></li>
           </ul>
         </div><!-- /.footer-column -->
 
         <div class="footer-column footer-menu mb-4 mb-lg-0">
           <h6 class="sub-menu__title text-uppercase">Help</h6>
           <ul class="sub-menu__list list-unstyled">
-            <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Customer Service</a></li>
-            <li class="sub-menu__item"><a href="account_dashboard.html" class="menu-link menu-link_us-s">My Account</a></li>
-            <li class="sub-menu__item"><a href="store_location.html" class="menu-link menu-link_us-s">Find a Store</a></li>
-            <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Legal & Privacy</a></li>
-            <li class="sub-menu__item"><a href="contact.html" class="menu-link menu-link_us-s">Contact</a></li>
-            <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Gift Card</a></li>
+            <li class="sub-menu__item"><a href="{% url 'about' %}" class="menu-link menu-link_us-s">Customer Service</a></li>
+            <li class="sub-menu__item"><a href="{% url 'account-profile' %}" class="menu-link menu-link_us-s">My Account</a></li>
+            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Find a Store</a></li>
+            <li class="sub-menu__item"><a href="{% url 'about' %}" class="menu-link menu-link_us-s">Legal & Privacy</a></li>
+            <li class="sub-menu__item"><a href="{% url 'contact' %}" class="menu-link menu-link_us-s">Contact</a></li>
+            <li class="sub-menu__item"><a href="{% url 'about' %}" class="menu-link menu-link_us-s">Gift Card</a></li>
           </ul>
         </div><!-- /.footer-column -->
 
         <div class="footer-column footer-newsletter col-12 mb-4 mb-lg-0">
           <h6 class="sub-menu__title text-uppercase">Subscribe</h6>
           <p>Be the first to get the latest news about trends, promotions, and much more!</p>
-          <form action="https://uomo-html.flexkitux.com/Demo5/index.html" class="footer-newsletter__form position-relative bg-body">
+          <form class="footer-newsletter__form position-relative bg-body">
             <input class="form-control border-white" type="email" name="email" placeholder="Your email address">
             <input class="btn-link fw-medium bg-white position-absolute top-0 end-0 h-100" type="submit" value="JOIN">
           </form>
@@ -641,16 +630,7 @@
       <div class="d-block d-md-flex align-items-center">
         <span class="footer-copyright me-auto">©2024 Uomo</span>
         <div class="footer-settings d-block d-md-flex align-items-center">
-          <div class="d-flex align-items-center">
-            <label for="footerSettingsLanguage" class="me-2 text-secondary">Language</label>
-            <select id="footerSettingsLanguage" class="form-select form-select-sm bg-transparent" aria-label="Default select example" name="store-language">
-              <option class="footer-select__option" selected>United Kingdom | English</option>
-              <option class="footer-select__option" value="1">United States | English</option>
-              <option class="footer-select__option" value="2">German</option>
-              <option class="footer-select__option" value="3">French</option>
-              <option class="footer-select__option" value="4">Swedish</option>
-            </select>
-          </div>
+          
 
           <div class="d-flex align-items-center">
             <label for="footerSettingsCurrency" class="ms-md-3 me-2 text-secondary">Currency</label>
@@ -986,7 +966,7 @@
                             <a href="#" class="menu-link menu-link_us-s">Bags</a>
                           </li>
                           <li class="sub-menu__item">
-                            <a href="about.html" class="menu-link menu-link_us-s">Gift Card</a>
+                            <a href="{% url 'about' %}" class="menu-link menu-link_us-s">Gift Card</a>
                           </li>
                         </ul><!-- /.sub-menu -->
                       </div>
@@ -1026,7 +1006,7 @@
                             <a href="#" class="menu-link menu-link_us-s">Sweatshirts and Hoodies</a>
                           </li>
                           <li class="sub-menu__item">
-                            <a href="about.html" class="menu-link menu-link_us-s">Gift Card</a>
+                            <a href="{% url 'about' %}" class="menu-link menu-link_us-s">Gift Card</a>
                           </li>
                           <li class="sub-menu__item">
                             <a href="#" class="menu-link menu-link_us-s">Shirts & Blouses</a>
@@ -1051,7 +1031,7 @@
                       <div class="tab-pane fade" id="tab-item-3" role="tabpanel" aria-labelledby="tab-item-3-tab">
                         <ul class="sub-menu list-unstyled">
                           <li class="sub-menu__item">
-                            <a href="about.html" class="menu-link menu-link_us-s">Gift Card</a>
+                            <a href="{% url 'about' %}" class="menu-link menu-link_us-s">Gift Card</a>
                           </li>
                           <li class="sub-menu__item">
                             <a href="#" class="menu-link menu-link_us-s">Collaborations®</a>
