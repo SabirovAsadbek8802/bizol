@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.timezone import now
-from .choices import ProductStatusChoices
+from ..main_app.choices import ProductStatusChoices
 from apps.users_app.models import Customer
 from django.utils.text import slugify
 from apps.main_app.models import Category
@@ -22,13 +22,4 @@ class Product(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
-    
-class Order(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    quantity = models.DecimalField(max_digits=6, decimal_places = 2, default=0)
-    address = models.CharField(max_length = 255, blank=False, null=False)
-    phone_number = models.CharField(max_length=30, blank=False, null=False)
-    date = models.DateTimeField()
-    status = models.SmallIntegerField(choices = ProductStatusChoices.choices, null=False)
     
